@@ -1,0 +1,41 @@
+{
+	"id": "nodebb-plugin-buld-users-bf",
+	"name": "User Invitations",
+	"description": "Allows current users to email invitations to potential new users.",
+	"url": "https://github.com/NodeBB-Community/nodebb-plugin-user-invitations",
+	"library": "./library.js",
+	"staticDirs": {
+		"public": "public"
+	},
+	"scripts": [
+		"public/js/script.js"
+	],
+	"acpScripts": [
+		"public/js/script.js"
+	],
+	"templates": "public/templates",
+	"hooks": [
+		{ "hook": "static:app.load",           "method": "init" },
+
+		{ "hook": "filter:register.check",     "method": "invitations.registerCheck" },
+
+		{ "hook": "action:user.create",        "method": "invitations.userCreate" },
+		{ "hook": "static:user.delete",        "method": "invitations.userDelete" },
+
+		{ "hook": "filter:user.profileLinks",  "method": "views.userProfileLinks" },
+		{ "hook": "filter:admin.header.build", "method": "views.adminHeaderBuild" },
+
+		{ "hook": "filter:rewards.conditionals", "method": "conditionals.get" },
+		{ "hook": "filter:rewards.conditions",   "method": "conditions.get" },
+		{ "hook": "filter:rewards.rewards",      "method": "rewards.get" },
+
+		{ "hook": "action:rewards.award:invite/give-invitations", "method": "rewards.giveInvitations" },
+
+		{ "hook": "filter:rewards.checkConditional:greaterthan",        "method": "conditionals.greaterthan" },
+		{ "hook": "filter:rewards.checkConditional:greaterorequalthan", "method": "conditionals.greaterorequalthan" },
+		{ "hook": "filter:rewards.checkConditional:lesserthan",         "method": "conditionals.lesserthan" },
+		{ "hook": "filter:rewards.checkConditional:lesserorequalthan",  "method": "conditionals.lesserorequalthan" },
+		{ "hook": "filter:rewards.checkConditional:string",             "method": "conditionals.string" }
+	],
+	"languages": "public/language"
+}
