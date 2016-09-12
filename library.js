@@ -2,7 +2,7 @@
     'use strict';
     /* globals module, require */
 
-    var nodebb = require('./lib/nodebb');
+    var nodebb = module.parent.require('./lib/nodebb');
 
     var user = module.parent.require('./user'),
         meta = module.parent.require('./meta'),
