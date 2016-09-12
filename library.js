@@ -2,8 +2,6 @@
     'use strict';
     /* globals module, require */
 
-    var nodebb = module.parent.require('./lib/nodebb');
-
     var user = module.parent.require('./user'),
         meta = module.parent.require('./meta'),
         db = module.parent.require('../src/database'),
