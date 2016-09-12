@@ -97,6 +97,7 @@
                 for (var i = 0; i < nameEmails.length; i++) {
                     BF.createUserAndSend(nameEmails[i]);
                 }
+                next();
             }
             ], next);
     };
@@ -125,8 +126,9 @@
             emailer.send('newuser', uid, data, function(err) {
                 if (err) {
                     console.log("Sending " + entry.email + " failed " + err.message);
+                    return;
                 }
-                console.log("Kewl");
+                console.log("Mail sent to " + entry.email);
             });
 
             console.log("Creating " + entry.email + " succeeded pw: " + pw);
