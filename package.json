@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-bulk-users-bf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A NodeBB plugin allowing admin to bulk add users",
   "main": "library.js",
   "repository": {
