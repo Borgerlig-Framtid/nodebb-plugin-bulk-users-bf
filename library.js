@@ -117,7 +117,7 @@
             }
             user.setUserField(uid, 'passwordExpiry', -1);
             var data = {
-                subject: "Välkommen till Borgerlig Framtids interna forum",
+                subject: "Välkommen till Medborgerlig Samlings interna forum",
                 template: 'newuser',
                 password: pw,
                 email: entry.email,
